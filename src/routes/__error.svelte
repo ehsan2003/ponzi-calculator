@@ -4,6 +4,7 @@
 	export const load: ErrorLoad = ({ status }) => {
 		if (status === 404) {
 			return {
+                status:302,
 				redirect: '/'
 			};
 		}
