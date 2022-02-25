@@ -1,7 +1,7 @@
-<div class="flex my-10 md:flex-row-reverse flex-col-reverse items-center">
+<div class="flex my-10 md:flex-row flex-col-reverse items-center">
 	<div class="md:w-2/3">
 		<!-- svelte-ignore a11y-media-has-caption -->
-		<video controls class=" rounded-lg ">
+		<video controls class=" rounded-lg w-full ">
 			<source src="/ponzi-definition.mp4" />
 		</video>
 	</div>
