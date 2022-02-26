@@ -7,9 +7,10 @@ body {
 }
 @font-face {
 	font-family: Vazir;
-	src: url('/fonts/Vazir.eot');
-	src: url('/fonts/Vazir.eot?#iefix') format('embedded-opentype'),
-		url('/fonts/Vazir.woff') format('woff'), url('/fonts/Vazir.ttf') format('truetype');
+	src: url('/fonts/Vazir-Regular.eot');
+	src: url('/fonts/Vazir-Regular.eot?#iefix') format('embedded-opentype'),
+		url('/fonts/Vazir-Regular.woff') format('woff'),
+		url('/fonts/Vazir-Regular.ttf') format('truetype');
 	font-weight: normal;
 }
 

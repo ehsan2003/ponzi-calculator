@@ -13,3 +13,9 @@
 		</h3>
 	</div>
 </div>
+
+<img
+	src={'/images/ponzi-banner.jpg'}
+	alt="a banner describing ponzi scheme"
+	class="w-full mb-10 mt-2"
+/>

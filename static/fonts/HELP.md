@@ -49,7 +49,7 @@
 فونت وزیر استاندارد که در ریشهٔ بستهٔ کامل قرار دارد در صورتی که ارقام را طبق استاندارد ورودی فارسی نوشته باشید به همان صورت فارسی نمایش می‌دهد. اگر شما انگلیسی یا عربی می‌بینید به این معناست که آن‌ها در هنگام نوشتن فارسی نبوده‌اند.  
 فارسی: ۱۲۳۴۵۶۷۸۹۰  
 عربی: ١٢٣٤٥٦٧٨٩٠  
-لاتین: 1234567890  
+لاتین: 1234567890
 
 یک فونت استاندارد نباید چیزی غیر از اصل متن را نمایش دهد و همچنین نباید اشتباهاتِ هنگام ورود و نگارش متن را اصلاح نماید.
 
@@ -59,14 +59,16 @@
 
 ### برایم مهم نیست که در اصلِ متن، اعداد به صورت لاتین یا عربی نوشته‌اند. چگونه فونت وزیر را مجبور به نمایش فارسی اعداد کنم؟
 
-در حال حاضر دو راه وجود دارد:  
+در حال حاضر دو راه وجود دارد:
+
 - استفاده از فونت‌های موجود در پوشه `Farsi-Digits` که تمامی ارقام انگلیسی و عربی آن با فارسی بازنویسی شده‌اند. اگر چه این روش استاندارد نیست اما می‌تواند مشکل شما را حل کند.
-- استفاده از Stylistic Set: کافیست اگر در برنامه مورد استفاده قابلیت تنظیم Open Type Features پشتیبانی می‌شود گزینه ss01 Farsi Digits در Stylistic Sets را انتخاب کنید و یا آنکه در محیط وب از این کد css استفاده کنید:  
+- استفاده از Stylistic Set: کافیست اگر در برنامه مورد استفاده قابلیت تنظیم Open Type Features پشتیبانی می‌شود گزینه ss01 Farsi Digits در Stylistic Sets را انتخاب کنید و یا آنکه در محیط وب از این کد css استفاده کنید:
+
 ```css
 .sample_farsi_digits {
-    -moz-font-feature-settings: "ss01";
-    -webkit-font-feature-settings: "ss01";
-    font-feature-settings: "ss01";
+	-moz-font-feature-settings: 'ss01';
+	-webkit-font-feature-settings: 'ss01';
+	font-feature-settings: 'ss01';
 }
 ```
 
@@ -75,12 +77,13 @@
 ارقام هم‌عرض یعنی برای مثال اندازه عرض ۱ با ۵ برابر باشد. در اینصورت عرض دو عدد زیر یکسان خواهد بود:  
 ۱۱۱۱۱  
 ۵۵۵۵۵  
-این حالت بیشتر برای گزارشات مناسب است. برای نمایش ارقام هم‌عرض کافیست اگر در برنامه مورد استفاده قابلیت تنظیم Open Type Features پشتیبانی می‌شود گزینه Tabular Numeric را انتخاب کنید و یا آنکه در محیط وب از این کد css استفاده کنید:  
+این حالت بیشتر برای گزارشات مناسب است. برای نمایش ارقام هم‌عرض کافیست اگر در برنامه مورد استفاده قابلیت تنظیم Open Type Features پشتیبانی می‌شود گزینه Tabular Numeric را انتخاب کنید و یا آنکه در محیط وب از این کد css استفاده کنید:
+
 ```css
 .sample_farsi_digits {
-    -moz-font-feature-settings: "tnum";
-    -webkit-font-feature-settings: "tnum";
-    font-feature-settings: "tnum";
+	-moz-font-feature-settings: 'tnum';
+	-webkit-font-feature-settings: 'tnum';
+	font-feature-settings: 'tnum';
 }
 ```
 
@@ -96,9 +99,9 @@
 
 ```css
 .sample_farsi_digits {
-    -moz-font-feature-settings: "ss01", "tnum";
-    -webkit-font-feature-settings: "ss01", "tnum";
-    font-feature-settings: "ss01", "tnum";
+	-moz-font-feature-settings: 'ss01', 'tnum';
+	-webkit-font-feature-settings: 'ss01', 'tnum';
+	font-feature-settings: 'ss01', 'tnum';
 }
 ```
 
@@ -126,6 +129,7 @@
 این مشکل معمولا در مورد فونت‌های فارسی وجود دارد. دلیلش اینست که بخش عمده‌ای از حروف فارسی مثل «ح ر ی ...» در زیر خط کرسی یا زمینه قرار دارند و همچنین به بالا و پایین حروف، اِعراب را هم باید اضافه کرد. در نتیجه حروف فارسی غالبا به فضای بیشتری نسبت به حروف لاتین برای نمایش احتیاج دارند. اما برای آن دسته از کسانی که نیاز به نسخه کوتاه دارند نسخهٔ دیگری در پوشه UI بسته قرار گرفته است که دارای ارتفاع بسیار کمتر می‌باشد.
 
 ### نسخه UI چیست؟
+
 در این نسخه ارتفاع فونت کاسته شده است تا اختلاف ارتفاع بین لاتین و فارسی کم شود. این نسخه برای افرادی مناسب است که نیاز به چنین حالتی در رابط کاربری User Interface برنامه‌ها دارند.
 
 ### چگونه می‌توانم در میزکارهای مبتنی بر Fontconfig (بیشتر سیستم عامل‌های Unix-like)، فونت پیش‌فرض را وزیر قرار دهم؟
@@ -178,14 +182,12 @@
     <edit name="family" mode="append" binding="same"><string>DejaVu Serif</string></edit>
   </match>
 
-
   <!-- Default monospace fonts -->
   <match target="pattern">
     <test qual="any" name="family"><string>monospace</string></test>
     <edit name="family" mode="prepend" binding="same"><string>Vazir Code WOL</string></edit>
     <edit name="family" mode="append" binding="same"><string>Inconsolata</string></edit>
   </match>
-
 
   <!-- Fallback fonts preference order -->
   <alias>
