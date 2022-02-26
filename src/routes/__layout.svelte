@@ -2,7 +2,7 @@
 	import '../app.css';
 </script>
 
-<div class="max-w-[820px] px-5 mx-auto" dir="rtl">
+<div class="max-w-[820px] px-4 mx-auto" dir="rtl">
 	<header class="py-10 hidden md:block ">
 		<nav class="flex text-gray-500 text-lg">
 			<a href="/" class="mx-5 block mr-0">خانه</a>

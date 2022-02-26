@@ -18,7 +18,7 @@
 		.filter((e) => e.amount > initialBudget)
 		.sort((a, b) => b.amount - a.amount) as { amount, image, title }}
 		<div
-			class="grid  grid-cols-1 sm:grid-cols-[150px_320px_150px] my-5 justify-stretch group grid-rows-1"
+			class="grid  grid-cols-1 sm:grid-cols-[150px_320px_150px] my-5 justify-center group grid-rows-1"
 		>
 			<div
 				class="w-full h-full justify-center items-center group-even:col-start-3 group-even:col-end-4 hidden sm:flex"
