@@ -34,6 +34,11 @@
 	$: element && budget && element.scrollIntoView({ behavior: 'smooth' });
 </script>
 
+<svelte:head>
+	<title>کلاه برداری {projectDef.name}</title>
+	<meta name="description" content={projectDef.shortDescription} />
+	<meta name="keywords" value="پانزی, کلاه برداری , دزدی , {projectDef.name}" />
+</svelte:head>
 <TopImage {...projectDef} />
 <div class="my-5">
 	{@html projectDef.description}

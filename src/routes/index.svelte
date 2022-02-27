@@ -23,6 +23,13 @@
 	$: inputs && scroller && setTimeout(() => scroller.scrollIntoView(), 450);
 </script>
 
+<svelte:head>
+	<title>پانزی</title>
+	<meta
+		name="description"
+		value="پانزی شیوه ی کلاه برداریی که چارلز پانزی سال ۱۹۱۹ ابدا کرد کماکان دامن گیر مردم است"
+	/>
+</svelte:head>
 <div class="text-center tracking-[5px] font-mono text-3xl text-gray-400 py-4  md:block hidden">
 	××××
 </div>
