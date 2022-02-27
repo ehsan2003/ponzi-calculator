@@ -2,6 +2,9 @@
 	import '../app.css';
 </script>
 
+<svelte:head>
+	<meta name="google-site-verification" content="-Z8EiRRy6kMDgq7XSofhfBJDziW2L_eoeJvCIb1pcvk" />
+</svelte:head>
 <div class="max-w-[820px] px-4 mx-auto" dir="rtl">
 	<header class="sm:py-10 py-5 ">
 		<nav class="flex text-gray-500 sm:text-lg text-sm justify-center sm:justify-start">
