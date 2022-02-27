@@ -1,3 +1,12 @@
+export type TimelineElement = {
+	title: string;
+	date: Date;
+	description?: string;
+	image?: string;
+	link?: string;
+	archivedLink?: string;
+};
+
 export type ProjectDefinition = {
 	name: string;
 	shortDescription: string;
@@ -9,10 +18,10 @@ export type ProjectDefinition = {
 	))[];
 	slug: string;
 	tags: string[];
+	profitText: string;
 
 	logo: string;
-	mainImageBig: string;
-	mainImageSmall: string;
+	mainImage: string;
 	mainImageAlt: string;
 
 	startDate: Date;
@@ -22,14 +31,7 @@ export type ProjectDefinition = {
 	totalProfit: number;
 
 	dailyProfit: number;
-	timeline: {
-		title: string;
-		date: Date;
-		description?: string;
-		image?: string;
-		link?: string;
-		archivedLink?: string;
-	}[];
+	timeline: TimelineElement[];
 	scamEstimate?: string;
 	victimCountEstimate?: string;
 	onWebamooz?: { url: string; date: Date }[];
@@ -41,6 +43,7 @@ export type ProjectDefinition = {
 export type TinyProjectDefinition = {
 	name: string;
 	dailyProfit: number;
+	profitText: string;
 	slug: string;
 	logo: string;
 };
@@ -55,10 +58,10 @@ export type ProjectDefinitionServer = {
 	))[];
 	slug: string;
 	tags: string[];
+	profitText: string;
 
 	logo: string;
-	mainImageBig: string;
-	mainImageSmall: string;
+	mainImage: string;
 	mainImageAlt: string;
 
 	startDate: string;
@@ -90,20 +93,22 @@ export const data: ProjectDefinitionServer[] = [
 			'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه <br><br> و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می <br><br> باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را <br><br> برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و  <br><br> دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.',
 		startDate: new Date('2019-01-01').toISOString(),
 		endDate: new Date().toISOString(),
-		mainImageBig: '/images/projects/test-ponzi-big.jpg',
-		mainImageSmall: '/images/projects/test-ponzi-small.jpg',
+		mainImage: '/images/projects/Unique-Finance.jpg',
 		logo: '/images/projects/unique-finance-logo.png',
 		tags: ['ponzi', 'crypto related'],
 		timeline: [
 			{
 				title: 'شروع به کار',
-				date: new Date(Date.now() - 1000000).toISOString()
+				date: new Date(Date.now() - 1000000).toISOString(),
+				image: '/images/projects/test-ponzi-big.jpg'
 			},
 			{
 				title: 'برنامه ریزی در کشتی تفریحی',
 				date: new Date(Date.now() - 10000000).toISOString(),
 				description:
-					'در تاریخ ....... کلاهبرداران یونیک فایننس اقدام به اجاره ی کشتی تفریحی کردند تا از این طریق قربانیان اولیه را جذب کنند'
+					'در تاریخ ....... کلاهبرداران یونیک فایننس اقدام به اجاره ی کشتی تفریحی کردند تا از این طریق قربانیان اولیه را جذب کنند',
+				link: 'https://unique.finance/category/market-data/',
+				archivedLink: 'https://unique.finance/category/market-data/'
 			},
 			{
 				title: 'عرضه ی رمز ارز جعلی فلان بهمان',
@@ -117,7 +122,9 @@ export const data: ProjectDefinitionServer[] = [
 				date: new Date().toISOString(),
 				description:
 					' در تاریخ فلان و بهمان صدا و سیمای جمهوری اسلامی برای اولین بار شیوه کلاه برداری پانزی را معرفی کرد',
-				image: '/images/projects/test-ponzi-small.jpg'
+				image: '/images/projects/test-ponzi-small.jpg',
+				link: 'https://unique.finance/category/market-data/',
+				archivedLink: 'https://unique.finance/category/market-data/'
 			},
 			{
 				title: 'پایان کار',
@@ -129,6 +136,7 @@ export const data: ProjectDefinitionServer[] = [
 		scamEstimate: 'صد ملیون',
 		victimCountEstimate: 'یک میلیون نفر',
 		dailyProfit: 1.0031820580257143,
+		profitText: 'ماهیانه ۱۰ درصد',
 		links: [],
 		slug: 'test-ponzi',
 		mainImageAlt: 'test-ponzi'
