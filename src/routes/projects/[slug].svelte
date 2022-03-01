@@ -13,6 +13,7 @@
 	import ItReallyPays from '$lib/components/projects/per-project/ItReallyPays.svelte';
 	import ProjectAlert from '$lib/components/projects/per-project/ProjectAlert.svelte';
 	import { ProjectDefFromServer } from '$lib/projectMethods';
+	import OnWebamooz from '$lib/components/projects/per-project/OnWebamooz.svelte';
 
 	export let project: ProjectDefinitionServer;
 
@@ -41,8 +42,14 @@
 </div>
 
 <ProjectAlert name={projectDef.name} />
-<Timeline isFinished={!!projectDef.endDate} name={project.name} timeline={projectDef.timeline} />
+{#if projectDef.timeline.length}
+	<Timeline isFinished={!!projectDef.endDate} name={project.name} timeline={projectDef.timeline} />
+{/if}
+
 <br />
+{#if projectDef.onWebamooz && projectDef.onWebamooz.length}
+	<OnWebamooz links={projectDef.onWebamooz.map(({ url }) => url)} />
+{/if}
 
 <LogicBehindPonzi dailyProfit={projectDef.dailyProfit} />
 <WhatIsPonzi />

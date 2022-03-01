@@ -94,7 +94,7 @@ export type ProjectDefinitionServer = {
 	}[];
 	scamEstimate?: string;
 	victimCountEstimate?: string;
-	onWebamooz?: { url: string; date: Date }[];
+	onWebamooz?: { url: string; }[];
 	onTheNews?: {
 		title: string;
 		link: string;
@@ -152,6 +152,7 @@ export const data: ProjectDefinitionServer[] = [
 			}
 		],
 		scamEstimate: 'صد ملیون',
+		onWebamooz: [{ url: "https://t.me/webamoozir/14084" }, { url: "https://t.me/webamoozir/14082" }],
 		victimCountEstimate: 'یک میلیون نفر',
 		dailyProfit: 1.031820580257143,
 		profitText: 'ماهیانه ۱۰ درصد',
