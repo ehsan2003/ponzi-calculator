@@ -1,9 +1,8 @@
 <script lang="ts">
 	export let links: string[];
 </script>
-<h3 class="my-5 text-2xl font-bold">
-    در وب آموز (نیازمند فیلتر شکن برای مشاهده )
-</h3>
+
+<h3 class="my-5 text-2xl font-bold text-center">در وب آموز (نیازمند فیلتر شکن برای مشاهده )</h3>
 <div class="flex flex-col">
 	{#each links.map((u) => new URL(u)) as link}
 		<div class="my-2">

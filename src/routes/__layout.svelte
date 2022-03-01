@@ -16,7 +16,7 @@
 	<div class="bg-gray-600 absolute h-[5px] inc" />
 	<div class="bg-gray-600 absolute h-[5px] dec" />
 </div>
-<div class="max-w-[820px] px-4 mx-auto relative pb-24 min-h-screen" dir="rtl">
+<div class="max-w-[820px] px-4 mx-auto relative pb-24 min-h-screen " dir="rtl">
 	<header class="sm:py-10 py-5 ">
 		<nav class="flex text-gray-500 sm:text-lg text-sm justify-center sm:justify-start">
 			<a href="/" class="ml-5 block mr-0">خانه</a>

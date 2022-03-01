@@ -14,6 +14,7 @@
 	import ProjectAlert from '$lib/components/projects/per-project/ProjectAlert.svelte';
 	import { ProjectDefFromServer } from '$lib/projectMethods';
 	import OnWebamooz from '$lib/components/projects/per-project/OnWebamooz.svelte';
+	import Links from '$lib/components/projects/per-project/Links.svelte';
 
 	export let project: ProjectDefinitionServer;
 
@@ -47,6 +48,10 @@
 {/if}
 
 <br />
+{#if projectDef.links && projectDef.links.length}
+
+	<Links links={projectDef.links} />
+{/if}
 {#if projectDef.onWebamooz && projectDef.onWebamooz.length}
 	<OnWebamooz links={projectDef.onWebamooz.map(({ url }) => url)} />
 {/if}

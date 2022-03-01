@@ -7,15 +7,14 @@ export type TimelineElement = {
 	archivedLink?: string;
 };
 
+export type Link = { name: string; } &
+	({ url: string; } | { archive: string; } | { url: string; archive: string; });
+
 export type ProjectDefinition = {
 	name: string;
 	shortDescription: string;
 	description: string;
-	links: ({ name: string } & (
-		| { url: string }
-		| { archive: string }
-		| { url: string; archive: string }
-	))[];
+	links: Link[];
 	slug: string;
 	tags: string[];
 	profitText: string;
@@ -34,7 +33,7 @@ export type ProjectDefinition = {
 	timeline: TimelineElement[];
 	scamEstimate?: string;
 	victimCountEstimate?: string;
-	onWebamooz?: { url: string; date: Date }[];
+	onWebamooz?: { url: string }[];
 	onTheNews?: {
 		title: string;
 		link: string;
@@ -67,11 +66,8 @@ export type ProjectDefinitionServer = {
 	name: string;
 	shortDescription: string;
 	description: string;
-	links: ({ name: string } & (
-		| { url: string }
-		| { archive: string }
-		| { url: string; archive: string }
-	))[];
+	links: Link[],
+
 	slug: string;
 	tags: string[];
 	profitText: string;
@@ -156,7 +152,7 @@ export const data: ProjectDefinitionServer[] = [
 		victimCountEstimate: 'یک میلیون نفر',
 		dailyProfit: 1.031820580257143,
 		profitText: 'ماهیانه ۱۰ درصد',
-		links: [],
+		links: [{ name: "سایت یونیک فایننس", url: "https://test.com" }, { name: "سایت یونیک فایننس", archive: "https://test.com" }, { name: "مهم ترین لینک عالم", archive: "https://archive.org", url: "https://twitter.com" }],
 		slug: 'testponzi' + ++i,
 		mainImageAlt: 'test-ponzi'
 	},
