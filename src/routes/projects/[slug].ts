@@ -1,7 +1,6 @@
 import { data } from '$lib/projects-data';
-import type { RequestHandler } from '@sveltejs/kit';
 
-export const get: RequestHandler = ({ params }) => {
+export const get = ({ params }) => {
 	const slug = params.slug.toLowerCase();
 	const found = data.find((project) => project.slug === slug);
 	if (found) {
@@ -10,5 +9,7 @@ export const get: RequestHandler = ({ params }) => {
 				project: found
 			}
 		};
+	} else {
+		return { fallthrough: true };
 	}
 };

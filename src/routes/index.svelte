@@ -16,9 +16,9 @@
 	import type { InputValues } from '$lib/components/index/Inputs.svelte';
 	import type { TinyProjectDefinition } from '$lib/projects-data';
 	export let projects: TinyProjectDefinition[];
-	let scroller: GeneralDescription | undefined;
+	let scroller: GeneralDescription;
 	import { fly } from 'svelte/transition';
-	let inputs: InputValues | undefined;
+	let inputs: InputValues;
 
 	$: inputs && scroller && setTimeout(() => scroller.scrollIntoView(), 450);
 </script>

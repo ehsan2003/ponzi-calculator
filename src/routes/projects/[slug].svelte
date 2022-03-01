@@ -7,28 +7,17 @@
 
 	import Timeline from '$lib/components/projects/per-project/Timeline.svelte';
 
-	import type { ProjectDefinition, ProjectDefinitionServer } from '$lib/projects-data';
+	import type { ProjectDefinitionServer } from '$lib/projects-data';
 
 	import WhatIsPonzi from '$lib/components/index/WhatIsPonzi.svelte';
 	import ItReallyPays from '$lib/components/projects/per-project/ItReallyPays.svelte';
 	import ProjectAlert from '$lib/components/projects/per-project/ProjectAlert.svelte';
+	import { ProjectDefFromServer } from '$lib/projectMethods';
 
 	export let project: ProjectDefinitionServer;
-	let projectDef: ProjectDefinition;
-	$: startDate = new Date(project.startDate);
-	$: endDate = project.endDate && new Date(project.endDate);
-	$: timeAlive = startDate.getTime() - (endDate || new Date()).getTime();
-	$: projectDef = {
-		...project,
-		startDate,
-		endDate,
-		timeAlive,
-		totalProfit: project.dailyProfit ** (timeAlive / (1000 * 60 * 60 * 24)),
-		timeline: project.timeline.map((t) => ({
-			...t,
-			date: new Date(t.date)
-		}))
-	};
+
+	$: projectDef = ProjectDefFromServer(project);
+
 	let budget: number | undefined;
 	let element: HTMLElement;
 	$: element && budget && element.scrollIntoView({ behavior: 'smooth' });
@@ -39,7 +28,14 @@
 	<meta name="description" content={projectDef.shortDescription} />
 	<meta name="keywords" value="پانزی, کلاه برداری , دزدی , {projectDef.name}" />
 </svelte:head>
-<TopImage {...projectDef} />
+<TopImage
+	mainImageAlt={projectDef.mainImageAlt}
+	mainImage={projectDef.mainImage}
+	name={projectDef.name}
+	profitText={projectDef.profitText}
+	shortDescription={projectDef.shortDescription}
+	tags={projectDef.tags}
+/>
 <div class="my-5">
 	{@html projectDef.description}
 </div>
@@ -50,6 +46,7 @@
 
 <LogicBehindPonzi dailyProfit={projectDef.dailyProfit} />
 <WhatIsPonzi />
-
-<Danger victimEstimate={projectDef.victimCountEstimate} scamEstimate={projectDef.scamEstimate} />
+{#if projectDef.victimCountEstimate && projectDef.scamEstimate}
+	<Danger victimEstimate={projectDef.victimCountEstimate} scamEstimate={projectDef.scamEstimate} />
+{/if}
 <ItReallyPays />

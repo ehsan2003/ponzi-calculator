@@ -1,5 +1,6 @@
 import { data } from '$lib/projects-data';
 import type { RequestHandler } from '@sveltejs/kit';
+import { ProjectDefinitionToTiny } from '../lib/projectMethods';
 
 export const get: RequestHandler = () => {
 	return {
@@ -8,7 +9,7 @@ export const get: RequestHandler = () => {
 			projects: data
 				.sort((a, b) => b.dailyProfit - a.dailyProfit)
 				.slice(0, 3)
-				.map(({ name, dailyProfit, slug, logo }) => ({ name, dailyProfit, slug, logo }))
+				.map(ProjectDefinitionToTiny)
 		}
 	};
 };

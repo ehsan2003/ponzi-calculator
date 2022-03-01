@@ -33,6 +33,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"joi": "^17.6.0",
 		"svelte-material-icons": "^1.0.3"
 	}
 }
