@@ -18,8 +18,9 @@
 		با سود بهتر ...!؟
 	</div>
 	<div class="flex flex-col sm:items-end items-center  mt-5 sm:mt-0  grow-[1]">
-		{#each defs as { name, dailyProfit, slug, logo }}
-			<div
+		{#each defs as { name, dailyProfit, slug, logo, profitText }}
+			<a
+				href="/projects/{slug}"
 				class="grid grid-cols-[5fr_3fr] grid-rows-[4fr_1fr] bg-black justify-start rounded-lg max-w-xs h-32 my-2 p-4 gap-x-4 gapy-1"
 			>
 				<h3 class="text-white font-bold text-xl flex items-center">
@@ -37,14 +38,10 @@
 					class="col-start-2 col-end-3 row-start-1 row-end-3 z-10 text-white flex items-center justify-center font-bold text-lg text-center shadowed-text "
 				>
 					<span>
-						{(dailyProfit ** timeUnit).toFixed(1)}
-						<br />
-						درصد سود
-						<br />
-						{getUnitName(timeUnit)}
+						{profitText}
 					</span>
 				</div>
-			</div>
+			</a>
 		{/each}
 	</div>
 </div>
