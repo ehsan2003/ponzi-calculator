@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-	export type InputValues = { dailyProfit: number; initialBudget: number; timeUnit: number };
+	export type InputValues = { dailyBonus: number; initialBudget: number; timeUnit: number };
 </script>
 
 <script lang="ts">
@@ -8,24 +8,24 @@
 
 	const dispatch = createEventDispatcher<{ 'inputs-change': InputValues }>();
 
-	let profit: number | null;
+	let bonus: number | null;
 	let initialBudget: number | null;
-	let profitUnit = 30;
+	let bonusDuration = 30;
 
 	let isFirstClicked = false;
-	let profitInvalid = false;
+	let bonusInvalid = false;
 	let initialBudgetInvalid = false;
 
-	$: profitInvalid = !profit;
+	$: bonusInvalid = !bonus;
 	$: initialBudgetInvalid = !initialBudget;
 
 	function handleGo() {
 		isFirstClicked = true;
-		if (profit && initialBudget && profit < Infinity && initialBudget < Infinity) {
+		if (bonus && initialBudget && bonus < Infinity && initialBudget < Infinity) {
 			dispatch('inputs-change', {
-				dailyProfit: (1 + profit / 100) ** (1 / profitUnit),
+				dailyBonus: (1 + bonus / 100) ** (1 / bonusDuration),
 				initialBudget,
-				timeUnit: profitUnit
+				timeUnit: bonusDuration
 			});
 		}
 	}
@@ -36,11 +36,11 @@
 		<input
 			type="number"
 			min="0"
-			bind:value={profit}
+			bind:value={bonus}
 			class="block w-full  placeholder:text-sm h-7  px-2 transition-colors placeholder:transition-colors outline-none"
-			class:placeholder:text-red-600={profitInvalid && isFirstClicked}
-			class:text-red-600={profitInvalid && isFirstClicked}
-			class:bg-red-100={profitInvalid && isFirstClicked}
+			class:placeholder:text-red-600={bonusInvalid && isFirstClicked}
+			class:text-red-600={bonusInvalid && isFirstClicked}
+			class:bg-red-100={bonusInvalid && isFirstClicked}
 			placeholder="درصد سود"
 		/>
 	</div>
@@ -49,7 +49,7 @@
 			class="bg-black  text-white px-2 h-full w-full block text-center text-sm tracking-wide"
 			name=""
 			id=""
-			bind:value={profitUnit}
+			bind:value={bonusDuration}
 		>
 			{#each timeUnits as unit}
 				<option value={unit.days}>{unit.label}</option>

@@ -34,7 +34,7 @@
 	mainImageAlt={projectDef.mainImageAlt}
 	mainImage={projectDef.mainImage}
 	name={projectDef.name}
-	profitText={projectDef.profitText}
+	bonusText={projectDef.bonusText}
 	shortDescription={projectDef.shortDescription}
 	tags={projectDef.tags}
 />
@@ -49,14 +49,13 @@
 
 <br />
 {#if projectDef.links && projectDef.links.length}
-
 	<Links links={projectDef.links} />
 {/if}
 {#if projectDef.onWebamooz && projectDef.onWebamooz.length}
 	<OnWebamooz links={projectDef.onWebamooz.map(({ url }) => url)} />
 {/if}
 
-<LogicBehindPonzi dailyProfit={projectDef.dailyProfit} />
+<LogicBehindPonzi dailyBonus={projectDef.dailyBonus} />
 <WhatIsPonzi />
 {#if projectDef.victimCountEstimate && projectDef.scamEstimate}
 	<Danger victimEstimate={projectDef.victimCountEstimate} scamEstimate={projectDef.scamEstimate} />

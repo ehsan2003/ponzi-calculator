@@ -34,7 +34,7 @@
 			<option value="name">نام</option>
 			<option value="startDate">تاریخ شروع </option>
 			<option value="timeAlive">مدت فعالیت</option>
-			<option value="profit">درصد سود</option>
+			<option value="bonus">درصد سود</option>
 		</select>
 		<select bind:value={order} class="border mr-1 text-center rounded-md bg-zinc-200 py-1 w-16">
 			<option value="asc">سعودی</option>

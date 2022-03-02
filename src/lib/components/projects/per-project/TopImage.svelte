@@ -2,7 +2,7 @@
 	export let mainImageAlt: string;
 	export let mainImage: string;
 	export let name: string;
-	export let profitText: string;
+	export let bonusText: string;
 	export let shortDescription: string;
 	export let tags: string[];
 </script>
@@ -20,7 +20,7 @@
 		>
 			<div id="short-desc">
 				<span class="float-left p-1 px-2 text-sm rounded-md bg-zinc-200 text-black">
-					{profitText}
+					{bonusText}
 				</span>
 				<h1 class="text-2xl">
 					{name}

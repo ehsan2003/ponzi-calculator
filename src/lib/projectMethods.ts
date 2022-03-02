@@ -7,16 +7,26 @@ import type {
 
 export function ProjectDefinitionToTiny({
 	name,
-	dailyProfit,
+	dailyBonus,
 	slug,
 	logo,
-	profitText,
+	bonusText,
 	shortDescription,
 	tags,
 	endDate,
 	startDate
 }: ProjectDefinitionServer): TinyProjectDefinitionServer {
-	return { name, dailyProfit, slug, logo, profitText, shortDescription, tags, endDate, startDate };
+	return {
+		name,
+		dailyBonus: dailyBonus,
+		slug,
+		logo,
+		bonusText,
+		shortDescription,
+		tags,
+		endDate,
+		startDate
+	};
 }
 
 export function ProjectDefFromServer(project: ProjectDefinitionServer): ProjectDefinition {
@@ -28,7 +38,7 @@ export function ProjectDefFromServer(project: ProjectDefinitionServer): ProjectD
 		startDate,
 		endDate,
 		timeAlive,
-		totalProfit: project.dailyProfit ** (timeAlive / (1000 * 60 * 60 * 24)),
+		totalProfit: project.dailyBonus ** (timeAlive / (1000 * 60 * 60 * 24)),
 		timeline: project.timeline.map((t) => ({
 			...t,
 			date: new Date(t.date)

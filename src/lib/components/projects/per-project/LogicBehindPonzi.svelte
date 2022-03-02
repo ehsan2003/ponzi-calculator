@@ -6,13 +6,13 @@
 
 	let budget: number | undefined;
 	let element: HTMLElement;
-	export let dailyProfit: number;
+	export let dailyBonus: number;
 	$: element && budget && element.scrollIntoView({ behavior: 'smooth' });
 </script>
 
 <BudgetInput on:go={(e) => (budget = e.detail)} />
 {#if budget}
 	<div bind:this={element} />
-	<Amounts {dailyProfit} initialBudget={budget} />
+	<Amounts {dailyBonus} initialBudget={budget} />
 	<Logical />
 {/if}

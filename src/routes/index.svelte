@@ -38,18 +38,18 @@
 {#if inputs}
 	<div transition:fly={{ y: 200, duration: 400 }}>
 		<GeneralDescription
-			dailyProfit={inputs.dailyProfit}
+			dailyBonus={inputs.dailyBonus}
 			unit={inputs.timeUnit}
 			bind:this={scroller}
 		/>
 		<br />
-		<Amounts dailyProfit={inputs.dailyProfit} initialBudget={inputs.initialBudget} />
+		<Amounts dailyBonus={inputs.dailyBonus} initialBudget={inputs.initialBudget} />
 		<Logical />
 		<hr class="w-4/5 h-[2px] bg-slate-500 my-8 mx-auto" />
-		{#if inputs.dailyProfit > 1.0016276620118332 && projects.every((p) => p.dailyProfit > inputs.dailyProfit)}
+		{#if inputs.dailyBonus > 1.0016276620118332 && projects.every((p) => p.dailyBonus > inputs.dailyBonus)}
 			<BetterProjects defs={projects} timeUnit={inputs.timeUnit} />
 		{/if}
-		<Alert dailyProfit={inputs.dailyProfit} />
+		<Alert dailyBonus={inputs.dailyBonus} />
 		<WhatIsPonzi />
 		<SocialMedia />
 	</div>

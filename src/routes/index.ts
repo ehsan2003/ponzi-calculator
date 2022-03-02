@@ -7,7 +7,7 @@ export const get: RequestHandler = () => {
 		status: 200,
 		body: {
 			projects: data
-				.sort((a, b) => b.dailyProfit - a.dailyProfit)
+				.sort((a, b) => b.dailyBonus - a.dailyBonus)
 				.slice(0, 3)
 				.map(ProjectDefinitionToTiny)
 		}

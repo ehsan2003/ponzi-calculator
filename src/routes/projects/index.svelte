@@ -18,7 +18,7 @@
 	let query = {
 		search: '',
 		onlyActive: false,
-		sort: 'profit',
+		sort: 'bonus',
 		order: 'desc' as 'desc' | 'asc',
 		skip: 0,
 		limit: 10,
@@ -70,7 +70,7 @@
 			<div class="sm:col-span-1 col-span-2">
 				<span class="float-left">
 					<span class="text-xs rounded-md bg-black text-white   px-1">
-						{project.profitText}
+						{project.bonusText}
 					</span>
 					<span class="text-xs rounded-md bg-zinc-300 px-1">
 						شروع : {project.startDate.toLocaleDateString('fa-IR', {

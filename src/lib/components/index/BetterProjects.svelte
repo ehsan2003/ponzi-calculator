@@ -1,9 +1,7 @@
 <script lang="ts">
 	import type { TinyProjectDefinition } from '$lib/projects-data';
-	import { getUnitName } from '$lib/time-units';
 
 	export let defs: TinyProjectDefinition[];
-	export let timeUnit: number;
 </script>
 
 <h2 class="text-2xl font-bold text-center mt-10">
@@ -18,7 +16,7 @@
 		با سود بهتر ...!؟
 	</div>
 	<div class="flex flex-col sm:items-end items-center  mt-5 sm:mt-0  grow-[1]">
-		{#each defs as { name, dailyProfit, slug, logo, profitText }}
+		{#each defs as { name, dailyBonus, slug, logo, bonusText }}
 			<a
 				href="/projects/{slug}"
 				class="grid grid-cols-[5fr_3fr] grid-rows-[4fr_1fr] bg-black justify-start rounded-lg max-w-xs h-32 my-2 p-4 gap-x-4 gapy-1"
@@ -38,7 +36,7 @@
 					class="col-start-2 col-end-3 row-start-1 row-end-3 z-10 text-white flex items-center justify-center font-bold text-lg text-center shadowed-text "
 				>
 					<span>
-						{profitText}
+						{bonusText}
 					</span>
 				</div>
 			</a>

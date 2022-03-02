@@ -7,7 +7,7 @@ interface Query {
 	search?: string;
 	skip: number;
 	limit: number;
-	sort: 'name' | 'startDate' | 'timeAlive' | 'profit';
+	sort: 'name' | 'startDate' | 'timeAlive' | 'bonus';
 	order: 'asc' | 'desc';
 	onlyActive: boolean;
 	tag?: string;
@@ -18,7 +18,7 @@ const schema = Joi.object({
 	search: Joi.string(),
 	skip: Joi.number().min(0).default(0),
 	limit: Joi.number().min(1).max(100).default(10),
-	sort: Joi.string().valid('name', 'startDate', 'profit', 'timeAlive').default('profit'),
+	sort: Joi.string().valid('name', 'startDate', 'bonus', 'timeAlive').default('bonus'),
 	order: Joi.string().valid('asc', 'desc').default('desc'),
 	onlyActive: Joi.boolean().default(false),
 	tiny: Joi.boolean().default(true)
@@ -66,8 +66,8 @@ export const get = ({ url }: { url: URL }) => {
 						timeBetween(a.startDate, a.endDate || new Date()) -
 						timeBetween(b.startDate, b.endDate || new Date())
 					);
-				case 'profit':
-					return a.dailyProfit - b.dailyProfit;
+				case 'bonus':
+					return a.dailyBonus - b.dailyBonus;
 			}
 		});
 	if (order === 'desc') {

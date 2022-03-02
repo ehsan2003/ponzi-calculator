@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { data } from '$lib/amounts';
 	import { formatTime } from '$lib/relative-time-formatter';
-	export let dailyProfit: number;
+	export let dailyBonus: number;
 	export let initialBudget: number;
 	function calculateTimeRequiredInSeconds(
 		amount: number,
-		dailyProfit: number,
+		dailyBonus: number,
 		initialBudget: number
 	) {
-		const days = Math.log(amount / initialBudget) / Math.log(dailyProfit);
+		const days = Math.log(amount / initialBudget) / Math.log(dailyBonus);
 		return days * 24 * 60 * 60;
 	}
 </script>
@@ -32,7 +32,7 @@
 				<p class="text-red-600 my-2 text-sm">${amount.toLocaleString()}</p>
 				<p class="font-thin my-2">
 					مدت زمان رسیدن با این پروژه :{formatTime(
-						calculateTimeRequiredInSeconds(amount, dailyProfit, initialBudget)
+						calculateTimeRequiredInSeconds(amount, dailyBonus, initialBudget)
 					)}
 				</p>
 			</div>
