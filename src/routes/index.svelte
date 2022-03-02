@@ -47,7 +47,7 @@
 		<Logical />
 		<hr class="w-4/5 h-[2px] bg-slate-500 my-8 mx-auto" />
 		{#if inputs.dailyBonus > 1.0016276620118332 && projects.every((p) => p.dailyBonus > inputs.dailyBonus)}
-			<BetterProjects defs={projects} timeUnit={inputs.timeUnit} />
+			<BetterProjects defs={projects} />
 		{/if}
 		<Alert dailyBonus={inputs.dailyBonus} />
 		<WhatIsPonzi />

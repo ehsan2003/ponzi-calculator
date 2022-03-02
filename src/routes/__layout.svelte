@@ -8,7 +8,7 @@
 	<meta name="google-site-verification" content="-Z8EiRRy6kMDgq7XSofhfBJDziW2L_eoeJvCIb1pcvk" />
 </svelte:head>
 <div
-	class="relative h-1 overflow-x-hidden w-screen"
+	class="relative h-1 overflow-x-hidden w-full"
 	class:opacity-0={!$navigating}
 	class:opacity-100={$navigating}
 >
@@ -33,7 +33,7 @@
 	<slot />
 	<footer>
 		<div
-			class="flex h-12 justify-center items-center text-gray-500 md:text-lg text-sm my-4 absolute bottom-0 w-full px-2 "
+			class="flex h-12 justify-center items-center text-gray-500 md:text-lg text-sm my-4  w-full px-2 "
 		>
 			<img src={'/logo-gray.png'} class="h-full ml-2" alt="" />
 			تمامی حقوق متعلق به وب آموز و تل اسکم میباشد

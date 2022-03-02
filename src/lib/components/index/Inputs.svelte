@@ -16,8 +16,8 @@
 	let bonusInvalid = false;
 	let initialBudgetInvalid = false;
 
-	$: bonusInvalid = !bonus;
-	$: initialBudgetInvalid = !initialBudget;
+	$: bonusInvalid = !bonus || bonus <= 0;
+	$: initialBudgetInvalid = !initialBudget || initialBudget <= 0;
 
 	function handleGo() {
 		isFirstClicked = true;

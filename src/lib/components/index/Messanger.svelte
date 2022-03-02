@@ -39,7 +39,7 @@
 		{#if init}
 			<!--  prettier-ignore -->
 			<h1
-				in:typewriter={{perCharDuration:40}}
+				in:typewriter={{perCharDuration:60}}
 				class="md:text-4xl text-3xl font-thin whitespace-pre-line"
 			>
 				جدیدا        
