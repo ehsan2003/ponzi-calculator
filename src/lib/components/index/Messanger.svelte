@@ -1,5 +1,13 @@
-<script>
+<script lang="ts">
 	import Inputs from './Inputs.svelte';
+	import { onMount } from 'svelte';
+	import { typewriter } from '$lib/transitions/typewriter-single';
+
+	let init = false;
+
+	onMount(() => {
+		init = true;
+	});
 </script>
 
 <div
@@ -28,11 +36,16 @@
 		<span class="h-[3px] w-12  bg-gray-400 rounded-md block md:hidden" />
 	</div>
 	<div class="md:basis-5/12 flex flex-col justify-center items-center md:items-start ">
-		<h1 class="md:text-4xl text-3xl font-thin">
-			جدیدا
-			<br />
-			از این پیاما گرفتی؟
-		</h1>
+		{#if init}
+			<!--  prettier-ignore -->
+			<h1
+				transition:typewriter={{perCharDuration:40}}
+				class="md:text-4xl text-3xl font-thin whitespace-pre-line"
+			>
+				جدیدا        
+				از این پیاما گرفتی؟
+			</h1>
+		{/if}
 		<Inputs on:inputs-change />
 	</div>
 </div>
