@@ -1,7 +1,7 @@
 <script lang="ts">
 	import SocialMedia from '../lib/components/index/SocialMedia.svelte';
 
-	import Alert from '../lib/components/index/Alert.svelte';
+	import Alert from '../lib/components/Alert.svelte';
 
 	import Amounts from '../lib/components/Amounts.svelte';
 
@@ -49,7 +49,12 @@
 		{#if inputs.dailyBonus > 1.0016276620118332 && projects.every((p) => p.dailyBonus > inputs.dailyBonus)}
 			<BetterProjects defs={projects} />
 		{/if}
-		<Alert dailyBonus={inputs.dailyBonus} />
+		<Alert>
+			هشدار!
+			<br />
+			آنچه به شما معرفی شده به احتمال ۱۱۰ درصد کلاه برداری پانزی است! آنچه به شما معرفی شده احتمال
+			کلاه برداری پانزی دارد
+		</Alert>
 		<WhatIsPonzi />
 		<SocialMedia />
 	</div>

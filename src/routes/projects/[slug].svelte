@@ -15,6 +15,7 @@
 	import { ProjectDefFromServer } from '$lib/projectMethods';
 	import OnWebamooz from '$lib/components/projects/per-project/OnWebamooz.svelte';
 	import Links from '$lib/components/projects/per-project/Links.svelte';
+	import Alert from '$lib/components/Alert.svelte';
 
 	export let project: ProjectDefinitionServer;
 
@@ -42,7 +43,10 @@
 	{@html projectDef.description}
 </div>
 
-<ProjectAlert name={projectDef.name} />
+<Alert>
+	هشدار اگر اخیرا شخصی به شما {projectDef.name}
+	معرفی کرده . مراقب کلاه برداری پانزی باشید
+</Alert>
 {#if projectDef.timeline.length}
 	<Timeline isFinished={!!projectDef.endDate} name={project.name} timeline={projectDef.timeline} />
 {/if}
