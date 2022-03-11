@@ -11,7 +11,6 @@
 
 	import WhatIsPonzi from '$lib/components/index/WhatIsPonzi.svelte';
 	import ItReallyPays from '$lib/components/projects/per-project/ItReallyPays.svelte';
-	import ProjectAlert from '$lib/components/projects/per-project/ProjectAlert.svelte';
 	import { ProjectDefFromServer } from '$lib/projectMethods';
 	import OnWebamooz from '$lib/components/projects/per-project/OnWebamooz.svelte';
 	import Links from '$lib/components/projects/per-project/Links.svelte';

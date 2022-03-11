@@ -1,4 +1,6 @@
 <script lang="ts">
+	import AdditionalInfoForm from '../lib/components/index/LowLevelWarnings.svelte';
+
 	import SocialMedia from '../lib/components/index/SocialMedia.svelte';
 
 	import Alert from '../lib/components/Alert.svelte';
@@ -34,29 +36,31 @@
 	××××
 </div>
 <Messanger on:inputs-change={(e) => (inputs = e.detail)} />
+<AdditionalInfoForm />
 
 {#if inputs}
 	<div transition:fly={{ y: 200, duration: 400 }}>
-		<GeneralDescription
-			dailyBonus={inputs.dailyBonus}
-			unit={inputs.timeUnit}
-			bind:this={scroller}
-		/>
-		<br />
-		<Amounts dailyBonus={inputs.dailyBonus} initialBudget={inputs.initialBudget} />
-		<Logical />
-		<hr class="w-4/5 h-[2px] bg-slate-500 my-8 mx-auto" />
-		{#if inputs.dailyBonus > 1.0016276620118332 && projects.every((p) => p.dailyBonus > inputs.dailyBonus)}
-			<BetterProjects defs={projects} />
-		{/if}
-		<Alert>
-			هشدار!
+		{#if inputs.dailyBonus > 1.00130821206895}
+			<GeneralDescription
+				dailyBonus={inputs.dailyBonus}
+				unit={inputs.timeUnit}
+				bind:this={scroller}
+			/>
 			<br />
-			آنچه به شما معرفی شده به احتمال ۱۱۰ درصد کلاه برداری پانزی است! آنچه به شما معرفی شده احتمال
-			کلاه برداری پانزی دارد
-		</Alert>
-		<WhatIsPonzi />
-		<SocialMedia />
+			<Amounts dailyBonus={inputs.dailyBonus} initialBudget={inputs.initialBudget} />
+			<Logical />
+			<hr class="w-4/5 h-[2px] bg-slate-500 my-8 mx-auto" />
+			{#if inputs.dailyBonus > 1.0016276620118332 && projects.every((p) => p.dailyBonus > inputs.dailyBonus)}
+				<BetterProjects defs={projects} />
+			{/if}
+			<Alert>
+				هشدار!
+				<br />
+				آنچه به شما معرفی شده کلاه برداری پانزی است!
+			</Alert>
+			<WhatIsPonzi />
+			<SocialMedia />
+		{/if}
 	</div>
 {/if}
 

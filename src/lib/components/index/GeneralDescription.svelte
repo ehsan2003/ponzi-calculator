@@ -2,6 +2,7 @@
 	import { getUnitName } from '$lib/time-units';
 	let element: HTMLElement;
 	import { fade } from 'svelte/transition';
+	import BlackBox from '../BlackBox.svelte';
 	export let dailyBonus: number;
 	export let unit: number;
 
@@ -11,7 +12,7 @@
 </script>
 
 <div bind:this={element} />
-<div class="bg-black rounded-xl w-full py-5 text-white grid grid-cols-1 grid-rows-1">
+<BlackBox>
 	{#key dailyBonus}
 		<h3
 			transition:fade
@@ -30,4 +31,4 @@
 			<p class="text-center mt-2">برای رسیدن به این مقادیر شما باید :</p>
 		</h3>
 	{/key}
-</div>
+</BlackBox>
