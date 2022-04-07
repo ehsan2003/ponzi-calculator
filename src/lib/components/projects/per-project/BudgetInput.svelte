@@ -4,11 +4,11 @@
 	const dispatcher = createEventDispatcher<{ go: number }>();
 	let isBudgetValid = false;
 	let budget: number;
-	$: isBudgetValid = !!budget;
+	$: isBudgetValid = !!budget && Number.isNaN(budget) === false;
 	let isFirstClicked = false;
 	function handleGo() {
 		isFirstClicked = true;
-		if (budget) {
+		if (isBudgetValid) {
 			dispatcher('go', budget);
 		}
 	}
@@ -31,7 +31,7 @@
 		<div class="flex mt-3 w-64">
 			<div class="flex rounded-md overflow-hidden ml-1 w-full ">
 				<input
-					type="text"
+					type="number"
 					class="block w-3/4 border-black border rounded-r-md pr-2 "
 					style="box-sizing: border-box;"
 					placeholder="سرمایه اولیه به دلار"
