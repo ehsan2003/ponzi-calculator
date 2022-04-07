@@ -47,7 +47,7 @@
 		</div>
 		<div class=" w-[29%]">
 			<select
-				class="bg-black  text-white px-2 h-full w-full block text-center text-sm tracking-wide"
+				class="bg-black rounded-none  text-white px-2 h-full w-full block text-center text-sm tracking-wide"
 				name=""
 				id=""
 				bind:value={bonusDuration}
@@ -73,7 +73,7 @@
 			/>
 		</div>
 		<div
-			class="bg-black w-[29%] text-white px-2 text-center text-sm tracking-wide flex items-center justify-center font-mono font-bold"
+			class="bg-black w-[29%]  text-white px-2 text-center text-sm tracking-wide flex items-center justify-center font-mono font-bold"
 		>
 			<span>$</span>
 		</div>
