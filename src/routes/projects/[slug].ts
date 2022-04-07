@@ -1,6 +1,7 @@
 import { data } from '$lib/projects-data';
+import type { RequestHandler } from '@sveltejs/kit';
 
-export const get = ({ params }) => {
+export const get: RequestHandler = ({ params }) => {
 	const slug = params.slug.toLowerCase();
 	const found = data.find((project) => project.slug === slug);
 	if (found) {
@@ -10,6 +11,6 @@ export const get = ({ params }) => {
 			}
 		};
 	} else {
-		return { fallthrough: true };
+		return { status: 404, error: new Error('no page found') };
 	}
 };
