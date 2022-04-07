@@ -37,7 +37,7 @@
 			<option value="bonus">درصد سود</option>
 		</select>
 		<select bind:value={order} class="border mr-1 text-center rounded-md bg-zinc-200 py-1 w-16">
-			<option value="asc">سعودی</option>
+			<option value="asc">صعودی</option>
 			<option value="desc">نزولی</option>
 		</select>
 	</label>
