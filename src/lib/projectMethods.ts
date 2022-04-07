@@ -3,7 +3,7 @@ import type {
 	ProjectDefinitionServer,
 	TinyProjectDefinition,
 	TinyProjectDefinitionServer
-} from '/home/ehsan/programming/ponzi-calculator-new/src/lib/projects-data';
+} from '$lib/projects-data';
 
 export function ProjectDefinitionToTiny({
 	name,
