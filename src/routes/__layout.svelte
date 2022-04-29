@@ -1,11 +1,10 @@
-<script lang="ts">
+<script>
 	import { navigating } from '$app/stores';
-
+	import Github from 'svelte-material-icons/GithubCircle.svelte';
 	import '../app.css';
 </script>
 
 <svelte:head>
-	<meta name="google-site-verification" content="-Z8EiRRy6kMDgq7XSofhfBJDziW2L_eoeJvCIb1pcvk" />
 </svelte:head>
 <div
 	class="relative h-1 overflow-x-hidden w-full"
@@ -19,12 +18,13 @@
 <div class="max-w-[820px] px-4 mx-auto relative min-h-[calc(100vh_-_5px)] " dir="rtl">
 	<header class="sm:py-10 py-5 ">
 		<nav class="flex text-gray-500 sm:text-lg text-sm justify-center sm:justify-start">
-			<a href="/" class="ml-5 block mr-0">خانه</a>
-			<a href="/" class="ml-5 block">تماس با ما</a>
-			<a href="/" class="ml-5 block">درباره ما</a>
-			<a href="/projects" class="ml-5 block">لیست پروژه ها </a>
+			<a href="https://github.com/Webamoozcom/ponzi-calculator" class="px-4 flex justify-center items-center"><Github size={"25px"} /></a>
+			<a href="https://www.webamooz.com/" class="ml-5 block mr-0">وب آموز</a>
+
+			<a href="https://webamoozcom.github.io/warning-list" class="ml-5 block">لیست هشدار</a>
+
 			<a href="/" class="font-sans tracking-[5px] items-center  mr-auto hidden sm:flex ">
-			PONZI.IR
+				PONZI
 				<span class="w-4 h-4 rounded-full bg-black block mx-3" />
 			</a>
 		</nav>
