@@ -7,19 +7,20 @@
 
 	import Logical from '../lib/components/index/Logical.svelte';
 
-	import BetterProjects from '$lib/components/index/BetterProjects.svelte';
+	// import BetterProjects from '$lib/components/index/BetterProjects.svelte';
+	// import type { TinyProjectDefinition } from '$lib/projects-data';
+	// export let projects: TinyProjectDefinition[];
 
 	import Messanger from '$lib/components/index/Messanger.svelte';
 	import WhatIsPonzi from '$lib/components/index/WhatIsPonzi.svelte';
 	import GeneralDescription from '$lib/components/index/GeneralDescription.svelte';
 
 	import type { InputValues } from '$lib/components/index/Inputs.svelte';
-	import type { TinyProjectDefinition } from '$lib/projects-data';
-	export let projects: TinyProjectDefinition[];
+	
 	let scroller: GeneralDescription;
 	import { fly } from 'svelte/transition';
 	let inputs: InputValues;
-
+	const FivePercentPerMonthDailyProfit = 1.00130821206895;
 	$: inputs && scroller && setTimeout(() => scroller.scrollIntoView(), 450);
 </script>
 
@@ -37,7 +38,7 @@
 
 {#if inputs}
 	<div transition:fly={{ y: 200, duration: 400 }}>
-		{#if inputs.dailyBonus > 1.00130821206895}
+		{#if inputs.dailyBonus >= FivePercentPerMonthDailyProfit}
 			<GeneralDescription
 				dailyBonus={inputs.dailyBonus}
 				unit={inputs.timeUnit}
@@ -47,9 +48,9 @@
 			<Amounts dailyBonus={inputs.dailyBonus} initialBudget={inputs.initialBudget} />
 			<Logical />
 			<hr class="w-4/5 h-[2px] bg-slate-500 my-8 mx-auto" />
-			{#if inputs.dailyBonus > 1.0016276620118332 && projects.every((p) => p.dailyBonus > inputs.dailyBonus)}
+			<!-- {#if inputs.dailyBonus > 1.0016276620118332 && projects.every((p) => p.dailyBonus > inputs.dailyBonus)}
 				<BetterProjects defs={projects} />
-			{/if}
+			{/if} -->
 			<Critical>
 				هشدار!
 				<br />
