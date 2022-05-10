@@ -11,7 +11,7 @@ export const data: MoneyAmount[] = [
 		amount: 129e9,
 		title: 'ثروت بیل گیتس ',
 		shortDescription: 'مالک شرکت مایکروسافت',
-		image: '/images/amounts/bil-gates.jpg',
+		image: '/images/amounts/bil-gates.webp',
 		longDescription: 'مالک شرکت مایکروسافت و چهارمین مرد ثروتمند دنیا در حال حاضر است'
 	},
 	{
@@ -25,7 +25,7 @@ export const data: MoneyAmount[] = [
 		amount: 20.94e12,
 		title: 'میزان تولید ناخالص آمریکا',
 		shortDescription: 'تولید ناخالص ایلات متحده ی آمریکا در سال ۲۰۲۰ که',
-		image: '/images/amounts/us-gdp.jpeg',
+		image: '/images/amounts/us.svg',
 		longDescription:
 			' تولید ناخالص آمریکا که برابر با :ارزش بازاری (ارزش پولی) تمامی کالاها و خدمات نهایی تولید شده در داخل مرزهای یک کشور طی دورهٔ زمانی خاص  '
 	},
@@ -33,7 +33,7 @@ export const data: MoneyAmount[] = [
 		amount: 191.7e9,
 		title: 'میزان تولید ناخالص ایران',
 		shortDescription: 'تولید ناخالص  ایران در سال ۲۰۲۰ ',
-		image: '/images/amounts/iran-gdp.jpeg',
+		image: '/images/amounts/iran.svg',
 		longDescription:
 			'  تولید ناخالص ایران در سال ۲۰۲۰ که برابر با : ارزش بازاری (ارزش پولی) تمامی کالاها و خدمات نهایی تولید شده در داخل مرزهای یک کشور طی دورهٔ زمانی خاص'
 	}

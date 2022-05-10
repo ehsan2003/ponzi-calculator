@@ -23,7 +23,10 @@
 			<div
 				class="w-full h-full justify-center items-center group-even:col-start-3 group-even:col-end-4 hidden sm:flex"
 			>
-				<img src={image} alt="usa flag" class="h-20 w-20 rounded-full grayscale" />
+			<div class="p-1 rounded-full border shadow-md shadow-slate-400">
+				<img src={image} alt="usa flag" class="h-20 w-20 rounded-full object-cover " />
+			</div>
+				
 			</div>
 			<div
 				class="border border-black rounded-lg sm:w-80 text-center sm:col-start-2 sm:col-end-3 row-start-1 row-end-2 p-3 col-span-2"
