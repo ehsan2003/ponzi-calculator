@@ -6,6 +6,7 @@
 
 <svelte:head>
 	<meta name="description" value="ترفند پانزی یک عملیات سرمایه‌گذاری کلاه‌بردارانه است" />
+	<meta name="google-site-verification" content="CwAg5MbRQOBWFsK4HIlFPZZEy4_cp-X-Fkx6WGhyEZ4" />
 </svelte:head>
 <div
 	class="relative h-1 overflow-x-hidden w-full"
