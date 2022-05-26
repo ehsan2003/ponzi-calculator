@@ -21,7 +21,7 @@
 	<header class="sm:py-10 py-5 ">
 		<nav class="flex text-gray-500 sm:text-lg text-sm justify-center sm:justify-start">
 			<a
-				href="https://github.com/Webamoozcom/ponzi-calculator"
+				href="https://github.com/ehsan2003/ponzi-calculator"
 				class="px-4 flex justify-center items-center"><Github size={'25px'} /></a
 			>
 			<a href="https://www.webamooz.com/" class="ml-5 block mr-0">وب آموز</a>
